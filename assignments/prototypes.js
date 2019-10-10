@@ -18,13 +18,13 @@
 
 //!---------------------------------------------------------------------------
 
-function gameObject(attributes) {
+function GameObject(attributes) {
   this.createdAt = attributes.createdAt;
   this.name = attributes.name;
   this.dimensions = attributes.dimensions;
 }
 
-gameObject.prototype.destroy = () => {
+GameObject.prototype.destroy = () => {
   `${this.name} was removed from the game.`;
 };
 
@@ -38,17 +38,17 @@ gameObject.prototype.destroy = () => {
 */
 //!---------------------------------------------------------------------------
 
-gameObject.prototype.destroy = () => {
+GameObject.prototype.destroy = () => {
   `${this.name} was destroyed.`;
 };
 
 function characterStats(stats) {
-  gameObject.call(this, stats);
+  GameObject.call(this, stats);
   this.healthPoints = stats.healthPoints;
 
 }
 
-characterStats.prototype = Object.create(gameObject.prototype);
+characterStats.prototype = Object.create(GameObject.prototype);
 
 characterStats.prototype.takeDamage = () => {
   `${this.name} has recived damage.`;
